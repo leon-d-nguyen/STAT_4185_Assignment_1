@@ -41,7 +41,11 @@ encrypted_message = encrypted_file.readline()
 encrypted_file.close()
 
 # Write code below
+decode_cipher = dict()
+for key in cipher:
+    decode_cipher[cipher[key]] = key
+
 decrypted_message=''
-for i in encrypted_message:
-    decrypted_message += encrypted_message[i]
+for i in range(len(encrypted_message)):
+    decrypted_message += decode_cipher[encrypted_message[i]]
 print(decrypted_message)
